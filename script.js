@@ -1,20 +1,63 @@
-function alo_mundo () {
-    alert ("Projeto Iniciado!")
-}
-escrever = msg => alert(msg);
-soma = (a,b) => a + b;
-sub = (a,b) => a - b;
-mult = (a,b) => a * b;
-div = (a,b) => a / b;
-raiz = a => Math.sqrt(a);
-equacao2Grau = (a,b,c) =>{
-    let delta = sub(mult(b,b),mult(4,mult(a,c)));
-    if (delta<0) return "não possui raiz real.";
-    if (delta == 0)return div(-b,mult(2,a));
-    return "x1 = " + div(soma (-b,raiz(delta)), mult(2,a)) + 
-    "x2 = " + div(soma (b,raiz(delta)), mult(2,a));
-}
+let lista_nome = ["Isabele","Sara","Alissia","Sophia","Amanda"];
+function atualizar_lista(){
+    let nomes ="";
 
-//tentando... 1000  x 22/100 + 1000
-escrever(equacao2Grau(3,-2,-1));
+    if(lista_nome.length > 0){
+        for(let i=0; i < lista_nome.length; i++){
+            nomes += lista_nome[i] + "<br>";
+        }
+        document.getElementById("lista").innerHTML = nomes;
+        return;
+    }
+    document.getElementById("lista").innerHTML = "Lista Vazia";
+}
+function insere_primeiro (){
+    let nomes = document.getElementById ("nome").value
+if (nomes!=="");{
+   lista_nome= [];
+    atualizar_lista;
+   }
+ }
 
+function deletar_primeiro (){
+    let nomes = document.getElementById ("nome").value
+if (lista_nome.nome.length > 0) {
+    lista_nome.shift ();
+    document.getElementById("nome").value
+    atualizar_lista ();
+}
+ }
+
+ function deletar_ultimo (){
+    if (lista_nome.length > 0) {
+        lista_nome.pop ();
+        atualizar_lista ();
+    }
+     }
+     function insere_ultimo (){
+     if(lista_nome.length > 0) {
+       lista_nome.shift();
+       document.getElementById("nomes").value = ""
+       atualizar_lista();
+
+     }
+
+     }
+        
+         function ordenar_za (){
+            if (lista_nome.length > 0) {
+                lista_nome.sort ();
+                lista_nome.reverse ();
+                atualizar_lista ();
+            }
+             }
+             function deletar_nome () {
+        let nome = document.getElementById("nome").value;
+        if(nome != ""){
+            for(let i=0; i < lista_nome,length; i++){
+             if(nome == lista_nome[i]) lista_nome.splice(i,i);
+  }
+        atualizar_lista();
+        }
+
+             }
